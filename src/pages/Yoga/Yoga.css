@@ -1,68 +1,147 @@
-.yoga-container {
-    background: #282c34;
-    min-width: 100vw;
-    min-height: 100vh;
+/* Yoga.css */
+
+.yoga-main-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  padding: 30px;
+  height: 70vh; /* fixed height for layout */
+  background: #282c34;
+  color: white;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100%; /* fill container height */
+}
+
+.pose-card,
+.feedback-card {
+  flex: 1 1 50%; /* each takes half height */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.pose-card img.pose-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.feedback-card .feedback-text {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #e3e3e3;
+  font-weight: 600;
+}
+
+.feedback-card .performance {
+  font-size: 1rem;
+  color: #c1c1c1;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.feedback-card button.secondary-btn {
+  align-self: center;
+  width: 150px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.right-panel {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.webcam-card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#webcam,
+#my-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(180deg);
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Buttons */
+
 .secondary-btn {
-    display: block;
-    margin: 0 auto;
-    
-    padding: 10px 20px;
-    border-radius: 5px;
-    border-color: rgba(42, 84, 238, 0.659);
-    border-width: 5px;
-    background-color: rgba(51, 113, 236, 0.881);
-    box-shadow: 0px 0px 0px 0px;
-    color: white;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 3px solid rgba(42, 84, 238, 0.7);
+  background-color: rgba(51, 113, 236, 0.85);
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .secondary-btn:hover {
-    background-color: rgba(23, 126, 245, 0.4);
+  background-color: rgba(23, 126, 245, 0.6);
+  border-color: rgba(23, 126, 245, 0.9);
+  cursor: pointer;
 }
 
-.starting-contdown {
-    margin: auto;
-    border: 10px solid rgba(125, 125, 125, 0.5);
-    width: max-content;
-    padding: 10px 30px;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0);
-    position: relative;
-    top: 45%;
-}
-.starting-contdown h1 {
-    color: white;
-}
-.pose-img {
-    position: absolute;
-    right: 120px;
-    top: 80px;
-    width: 500px;
-    aspect-ratio: 1;
+/* Additional small fixes */
+
+.feedback {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
 }
 
-.performance-container {
-    display: flex;
-    padding: 20px;
-    position: absolute;
-    left: 150px;
+.performance {
+  text-align: center;
+  color: #ddd;
+  font-size: 1rem;
 }
 
+/* DropDown and Instructions container style can remain as before */
 
-.pose-performance {
-    margin: 10px 10px;
-    background-color: white;
-    border-radius: 8px;
-    padding: 10px;
-}
-.pose-performance h4 {
-    color: rgba(0,0,0,0.7);
-}
-
-#webcam {
-    transform: rotateY(180deg);
+.yoga-container {
+  background: #282c34;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 40px 30px;
+  box-sizing: border-box;
 }
 
-#my-canvas {
-    transform: rotateY(180deg);
-}
+/* Scrollbar fixes if needed for smaller screens */
